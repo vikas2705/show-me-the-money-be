@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  show-me-the-money:
+    image: jaypeng2015/show-me-the-money
+    ports:
+      - "3000:3000"
+
+  fastapi-app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - show-me-the-money
